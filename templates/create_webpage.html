@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Topics Form</title>
+</head>
+<body>
+    <h1>Create Webpage</h1>
+    <form method="POST">
+        {% csrf_token %}
+        <label for="topic">Topic</label>
+        <select name="topic" id="topic">
+            {% for topic in topics %}
+            <option value={{topic}}>{{topic}}</option>          
+            {% endfor %}
+        </select><br>
+            <label for="name">Webpage Name </label>
+            <input type="text" name="name" id="name"><br>
+            <label for="url">Webpage url </label>
+            <input type="url" name="url" id="url"><br>
+    
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>

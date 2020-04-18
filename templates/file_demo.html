@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>file upload</title>
+</head>
+<body>
+    <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        <label for="img">Profile Pic</label>
+        <input type="file" name="profile" id="img">
+        <input type="submit" value="Submit">
+    </form>
+    {% if img_url %}
+    <h1>{{img_url}}</h1>
+    <img src="{{img_url}}" alt="no image" height="100" width="80">
+      
+    {% endif %}
+</body>
+</html>

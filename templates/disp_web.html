@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Webpage Details</title>
+</head>
+<body>
+    {% if webpages %}
+      <table border="2pt">
+          <tr>
+              <th>Topic Name</th>
+              <th>Webpage Name</th>
+              <th>Webpage URL</th>
+          </tr>
+          {% for webpage in webpages %}
+          <tr>
+              <td>{{webpage.topic.topic}}</td>
+              <td>{{webpage.name}}</td>
+              <td>{{webpage.url}}</td>
+          </tr>
+            
+          {% endfor %}
+      </table>
+    {% else %}
+      <h1>No Data Found</h1>
+    {% endif %}
+    
+</body>
+</html>

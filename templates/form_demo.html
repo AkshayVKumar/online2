@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML FORM DEMO</title>
+</head>
+<body>
+    <h1>Fille the below form</h1>
+    <form method="POST">
+        {% csrf_token %}
+        <label for="username">UserName</label>
+        {% if value %}
+        <input type="text" name="username" id="username" value={{value}}>
+        {% else %}
+        <input type="text" name="username" id="username"> 
+        {% endif %}
+        
+        
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>

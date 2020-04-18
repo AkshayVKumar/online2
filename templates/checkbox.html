@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Demo2</title>
+</head>
+<body>
+    <form method="POST">
+        {% csrf_token %}
+        <input type="checkbox" name="gender" id="gender" value="Male"> Male <br>
+        <input type="checkbox" name="gender" id="gender" value="Female"> Female <br>
+        
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>

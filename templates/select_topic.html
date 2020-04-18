@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Topic</title>
+</head>
+<body>
+    <form method="POST">
+        {% csrf_token %}
+            {% if topics %}
+            <label for="topic">Topic</label>
+            <select name="topic" id="topic">
+            {% for topic in topics %}
+            <option value={{topic.topic}}>{{topic.topic}}</option>
+            {% endfor %}
+            </select>
+            {% else %}
+              <h1>No Data Found</h1>
+            {% endif %}
+            <input type="submit" value="Submit">
+        
+    </form>
+</body>
+</html>
